@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array Methods in JavaScript</title>
+  </head>
+  <body>
+    <h1>JavaScript Array Methods</h1>
+    <p>Open the console or check the output below:</p>
+
+    <div class="result" id="output"></div>
+
+    <script>
+      const nums = [1, 2, 3, 4, 5];
+
+      let result = "";
+
+      // 1. for loop
+      result += "<strong>Using for loop:</strong> ";
+      for (let i = 0; i < nums.length; i++) {
+        result += nums[i] + " ";
+      }
+      result += "<br>";
+
+      // 2. forEach
+      result += "<strong>Using forEach:</strong> ";
+      nums.forEach((n) => (result += n + " "));
+      result += "<br>";
+
+      // 3. map
+      const doubled = nums.map((n) => n * 2);
+      result +=
+        "<strong>Using map (x2):</strong> " + doubled.join(" ") + "<br>";
+
+      // 4. filter
+      const evens = nums.filter((n) => n % 2 === 0);
+      result +=
+        "<strong>Using filter (even numbers):</strong> " +
+        evens.join(" ") +
+        "<br>";
+
+      // 5. reduce
+      const sum = nums.reduce((acc, n) => acc + n, 0);
+      result += "<strong>Using reduce (sum):</strong> " + sum + "<br>";
+
+      // Display result in the page
+      document.getElementById("output").innerHTML = result;
+    </script>
+  </body>
+</html>
